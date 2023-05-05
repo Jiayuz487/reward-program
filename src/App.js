@@ -1,23 +1,23 @@
-import logo from './assets/logo.svg';
-import './styles/App.css';
+import TransactionTable from "./components/TransactionTable";
+import getAllTransInPastThreeMonths from "./api/mockApi";
+import "./styles/App.css";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [records, setRecords] = useState([]);
+
+  useEffect(() => {
+    getAllTransInPastThreeMonths().then((res) => setRecords(res));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="reward-program">
+        <div className="select-group-container"></div>
+        <div className="table-container">
+          <TransactionTable records={records}></TransactionTable>
+        </div>
+      </div>
     </div>
   );
 }
