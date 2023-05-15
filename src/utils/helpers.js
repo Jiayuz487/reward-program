@@ -1,5 +1,4 @@
-export function calcPointsForSinglePurchase(purchase) {
-  const amount = purchase.amount;
+export function calcPoints(amount) {
   if (amount <= 50) {
     return 0;
   } else if (amount > 50 && amount <= 100) {
@@ -11,7 +10,7 @@ export function calcPointsForSinglePurchase(purchase) {
 
 export function calcTotalPointsForPurchases(purchases) {
   return purchases.reduce((totalPoints, purchase) => {
-    return totalPoints + calcPointsForSinglePurchase(purchase);
+    return totalPoints + calcPoints(purchase.amount);
   }, 0);
 }
 
@@ -21,13 +20,13 @@ export function getAllCustomers(purchases) {
 }
 
 export function isWithinSelectedPeriod(date, selectedPeriod) {
-  if (selectedPeriod === "") {
+  if (selectedPeriod === "All") {
     return true;
   }
   const currentDate = new Date();
-  const formattedDate = new Date(date);
+  const purchaseDate = new Date(date);
 
-  const differenceInTime = currentDate.getTime() - formattedDate.getTime();
+  const differenceInTime = currentDate.getTime() - purchaseDate.getTime();
   const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
 
   let periodInDays = 0;
@@ -47,7 +46,7 @@ export function isWithinSelectedPeriod(date, selectedPeriod) {
 }
 
 export function isSelectedCustomer(customer, selectedCustomer) {
-  if (selectedCustomer === "") {
+  if (selectedCustomer === "All") {
     return true;
   }
   return customer === selectedCustomer;

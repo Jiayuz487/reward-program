@@ -6,24 +6,23 @@ import {
   calcTotalPointsForPurchases,
   isSelectedCustomer,
   isWithinSelectedPeriod,
-} from "./utils/helperFunctions";
+} from "./utils/helpers";
 import { useState, useEffect } from "react";
 import "./styles/App.css";
 
 function App() {
   const [records, setRecords] = useState([]);
-  const [customers, setCustomers] = useState([]);
+  const [customers, setCustomers] = useState(["All"]);
   const [totalPoints, setTotalPoints] = useState(0);
   const [selectedRecords, setSelectedRecords] = useState([]);
-  const [selectedCustomer, setSelectedCustomer] = useState("");
-  const [selectedPeriod, setSelectedPeriod] = useState("");
-  const periods = ["", "Last 30 days", "Last 3 months", "Last 6 months"];
+  const [selectedCustomer, setSelectedCustomer] = useState("All");
+  const [selectedPeriod, setSelectedPeriod] = useState("All");
+  const periods = ["All", "Last 30 days", "Last 3 months", "Last 6 months"];
 
   useEffect(() => {
     getAllTransInPastThreeMonths().then((res) => {
       setRecords(res);
-      setSelectedRecords(res);
-      setCustomers(["", ...getAllCustomers(res)]);
+      setCustomers(["All", ...getAllCustomers(res)]);
     });
   }, []);
 

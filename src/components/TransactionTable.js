@@ -1,4 +1,4 @@
-import { calcPointsForSinglePurchase } from "../utils/helperFunctions";
+import { calcPoints } from "../utils/helpers";
 import "../styles/TransactionTable.css";
 
 export default function TransactionTable({ records }) {
@@ -22,7 +22,7 @@ export default function TransactionTable({ records }) {
                 <td>{record.customerId}</td>
                 <td>{record.date.substring(0, 10)}</td>
                 <td>{record.amount}</td>
-                <td>{calcPointsForSinglePurchase(record)}</td>
+                <td>{calcPoints(record.amount)}</td>
               </tr>
             );
           })}
