@@ -1,0 +1,14 @@
+.select-group {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.select-container {
+  padding: 10px;
+  font-size: 0.875rem;
+}
+
+.select-container select {
+  min-width: 100px;
+}

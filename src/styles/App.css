@@ -3,10 +3,15 @@
 }
 
 .reward-program {
-  padding: 70px;
+  padding: 0 70px;
+  min-width: 850px;
 }
 
-.table-container {
+.select-group-container {
+  min-width: 850px;
+}
+
+.transaction-table-container {
   border-radius: 10px;
   background-color: rgb(231, 235, 240);
   padding: 20px;

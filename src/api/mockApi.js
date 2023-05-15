@@ -53,6 +53,18 @@ const records = [
     date: "2023-04-05T15:39:45.329Z",
     amount: 42,
   },
+  {
+    transactionId: "ea23146e-63d0-4404-812d-617bdb525ad3",
+    customerId: "VT9O597F",
+    date: "2023-02-07T15:43:17.031Z",
+    amount: 150,
+  },
+  {
+    transactionId: "ed99e6fa-2065-47ad-b889-18a7216b04f4",
+    customerId: "VT9O597F",
+    date: "2022-09-15T15:43:21.139Z",
+    amount: 201,
+  },
 ];
 
 export default function getAllTransInPastThreeMonths() {

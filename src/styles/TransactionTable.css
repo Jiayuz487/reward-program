@@ -1,21 +1,21 @@
 .transaction-table {
-  max-height: 600px;
+  height: 450px;
   overflow: auto;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
 }
 
 table {
   font-size: 0.875rem;
   width: 100%;
   border-collapse: collapse;
-  background-color: rgb(255, 255, 255);
-  border-radius: 5px;
 }
 
 th,
 td {
   border-bottom: 1px solid rgb(224, 224, 224);
-  padding: 10px;
   background-color: rgb(255, 255, 255);
+  padding: 10px;
 }
 
 th {

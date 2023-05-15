@@ -7,7 +7,7 @@ export default function TransactionTable({ records }) {
       <table>
         <thead>
           <tr>
-            <th>Transaction ID</th>
+            <th width="40%">Transaction ID</th>
             <th>Customer ID</th>
             <th>Date</th>
             <th>Amount</th>
@@ -20,7 +20,7 @@ export default function TransactionTable({ records }) {
               <tr key={record.transactionId}>
                 <td>{record.transactionId}</td>
                 <td>{record.customerId}</td>
-                <td>{record.date}</td>
+                <td>{record.date.substring(0, 10)}</td>
                 <td>{record.amount}</td>
                 <td>{calcPointsForSinglePurchase(record)}</td>
               </tr>
