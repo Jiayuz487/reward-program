@@ -15,7 +15,8 @@ export function calcTotalPointsForPurchases(purchases) {
 }
 
 export function getAllCustomers(purchases) {
-  const customers = new Set(purchases.map((purchase) => purchase.customerId));
+  const customers = new Set();
+  purchases.forEach((purchase) => customers.add(purchase.customerId));
   return Array.from(customers);
 }
 

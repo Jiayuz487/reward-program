@@ -8,7 +8,7 @@ export default function SelectGroup({
 }) {
   return (
     <div className="select-group">
-      <div className="select-container">
+      <div className="select-group__select-container">
         <label htmlFor="select-customer">Select customer: </label>
         <select id="select-customer" onChange={handleCustomerChange}>
           {customers.map((customer) => (
@@ -18,7 +18,7 @@ export default function SelectGroup({
           ))}
         </select>
       </div>
-      <div className="select-container">
+      <div className="select-group__select-container">
         <label htmlFor="select-period">Select time period: </label>
         <select id="select-period" onChange={handlePeriodChange}>
           {periods.map((period) => (

@@ -4,11 +4,11 @@
   justify-content: center;
 }
 
-.select-container {
+.select-group__select-container {
   padding: 10px;
   font-size: 0.875rem;
 }
 
-.select-container select {
+.select-group__select-container select {
   min-width: 100px;
 }

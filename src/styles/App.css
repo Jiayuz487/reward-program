@@ -3,8 +3,16 @@
 }
 
 .reward-program {
-  padding: 0 70px;
+  position: relative;
+  padding: 20px 70px;
   min-width: 850px;
+}
+
+.alert-container {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .select-group-container {

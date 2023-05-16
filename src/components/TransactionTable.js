@@ -1,20 +1,20 @@
 import { calcPoints } from "../utils/helpers";
 import "../styles/TransactionTable.css";
 
-export default function TransactionTable({ records }) {
+export default function TransactionTable({ records, isLoading }) {
   return (
     <div className="transaction-table">
-      <table>
+      <table className="transaction-table__table">
         <thead>
           <tr>
             <th width="40%">Transaction ID</th>
-            <th>Customer ID</th>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>Reward Points</th>
+            <th width="15%">Customer ID</th>
+            <th width="15%">Date</th>
+            <th width="15%">Amount</th>
+            <th width="15%">Reward Points</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody hidden={isLoading}>
           {records.map((record) => {
             return (
               <tr key={record.transactionId}>
@@ -28,6 +28,9 @@ export default function TransactionTable({ records }) {
           })}
         </tbody>
       </table>
+      <div className="transaction-table__loader" hidden={!isLoading}>
+        <div className="lds-dual-ring"></div>
+      </div>
     </div>
   );
 }

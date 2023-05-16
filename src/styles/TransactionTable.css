@@ -1,29 +1,63 @@
 .transaction-table {
+  position: relative;
   height: 450px;
   overflow: auto;
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
 }
 
-table {
+.transaction-table__loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.transaction-table__table {
   font-size: 0.875rem;
   width: 100%;
   border-collapse: collapse;
 }
 
-th,
-td {
+.transaction-table__table th {
   border-bottom: 1px solid rgb(224, 224, 224);
   background-color: rgb(255, 255, 255);
   padding: 10px;
-}
-
-th {
   position: sticky;
   top: 0;
   line-height: 1.8rem;
 }
 
-td {
+.transaction-table__table td {
+  border-bottom: 1px solid rgb(224, 224, 224);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
   line-height: 1.4rem;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(216, 220, 225);
+  border-color: rgb(216, 220, 225) transparent rgb(216, 220, 225) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
