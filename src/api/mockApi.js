@@ -68,9 +68,10 @@ const records = [
 ];
 
 export default function getAllTransInPastThreeMonths() {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(records);
+      // reject("Something went wrong.")
     }, Math.random() * 5000);
   });
 }

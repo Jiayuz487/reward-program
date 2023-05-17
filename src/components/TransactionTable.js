@@ -7,11 +7,11 @@ export default function TransactionTable({ records, isLoading }) {
       <table className="transaction-table__table">
         <thead>
           <tr>
-            <th width="40%">Transaction ID</th>
-            <th width="15%">Customer ID</th>
-            <th width="15%">Date</th>
-            <th width="15%">Amount</th>
-            <th width="15%">Reward Points</th>
+            <th>Transaction ID</th>
+            <th>Customer ID</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Reward Points</th>
           </tr>
         </thead>
         <tbody hidden={isLoading}>

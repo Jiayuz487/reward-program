@@ -28,6 +28,14 @@
   line-height: 1.8rem;
 }
 
+.transaction-table__table th:first-child {
+  width: 40%;
+}
+
+.transaction-table__table th:nth-child(n + 2) {
+  width: 15%;
+}
+
 .transaction-table__table td {
   border-bottom: 1px solid rgb(224, 224, 224);
   background-color: rgb(255, 255, 255);
