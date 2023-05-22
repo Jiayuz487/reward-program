@@ -28,7 +28,11 @@ export default function TransactionTable({ records, isLoading }) {
           })}
         </tbody>
       </table>
-      <div className="transaction-table__loader" hidden={!isLoading}>
+      <div
+        className="transaction-table__loader"
+        hidden={!isLoading}
+        data-testid="loader"
+      >
         <div className="lds-dual-ring"></div>
       </div>
     </div>

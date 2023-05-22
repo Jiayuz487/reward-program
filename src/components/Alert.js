@@ -11,7 +11,10 @@ export default function Alert({ children }) {
   }
 
   return (
-    <div className={`alert ${isVisible ? "visible" : "hidden"}`}>
+    <div
+      className={`alert ${isVisible ? "visible" : "hidden"}`}
+      data-testid="alert"
+    >
       <img className="alert__icon" src={error} alt="alert icon"></img>
       <div className="alert__content">{children}</div>
       <img
